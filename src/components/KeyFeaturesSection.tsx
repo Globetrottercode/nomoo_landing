@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const features = [
@@ -35,11 +36,13 @@ const KeyFeaturesSection = () => {
         {/* Left: Phone and Map Image */}
         <div className='flex-1 flex justify-center items-center w-full mb-8 md:mb-0'>
           {/* Replace with your own image if available */}
-          <div className='relative w-[260px] h-[420px] flex items-center justify-center'>
-            <img
-              src='/heroSection/heroPhone.svg'
+          <div className='relative w-[360px] h-[520px] flex items-center justify-center'>
+            <Image
+              src='/tracking.png'
               alt='App preview'
               className='w-full h-auto z-10 rounded-2xl shadow-xl'
+              width={360}
+              height={520}
             />
             {/* Map overlay (placeholder) */}
             <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[180px] bg-white rounded-xl shadow border border-gray-100 z-0 flex items-center justify-center'>
