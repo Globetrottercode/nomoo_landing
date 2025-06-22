@@ -87,163 +87,187 @@ const restaurantCards = [
 
 const ImpactTrackingSection = () => {
   return (
-    <section className='w-full flex flex-col items-center py-16 bg-white'>
-      <div className='text-center mb-10'>
-        <div className='text-green-600 font-semibold text-sm mb-2'>
+    <section className='w-full flex flex-col items-center py-10 sm:py-16 bg-white'>
+      <div className='text-center mb-8 sm:mb-10 px-2'>
+        <div className='text-green-600 font-semibold text-xs sm:text-sm mb-2'>
           Carbon Footprint Tracking
         </div>
-        <h2 className='text-3xl md:text-4xl font-bold mb-2'>
+        <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold mb-2'>
           Track Your Impact. Compete to Save the Planet.
         </h2>
-        <p className='text-gray-500 max-w-2xl mx-auto text-base md:text-lg'>
+        <p className='text-gray-500 max-w-2xl mx-auto text-sm sm:text-base md:text-lg'>
           Our unique carbon calculator measures the CO₂ you save with every
           plant-based choice. Compete with friends and restaurants in fun
           challenges and rankings.
         </p>
       </div>
-      <div className='flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-6xl mb-12'>
-        {restaurantCards.slice(0, 2).map((card, i) => (
-          <div
-            key={i}
-            className='bg-white rounded-xl shadow-lg p-4 w-64 flex-shrink-0'
-          >
-            <div className='relative mb-3'>
-              <img
-                src={card.image}
-                alt={card.name}
-                className='rounded-lg w-full h-32 object-cover'
-              />
-              <div className='absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded-full font-bold'>
-                {card.rating} ★
-              </div>
-              <div className='absolute top-2 right-2 bg-white text-green-600 text-xs px-2 py-1 rounded-full font-bold'>
-                {card.distance}
-              </div>
-              <div className='absolute -top-4 right-1'>
-                <span className='bg-green-500 text-white text-xs px-2 py-1 rounded-t-lg font-bold shadow'>
-                  VEGAN FOOD
-                </span>
-              </div>
-            </div>
-            <div className='flex items-center gap-2 mb-1'>
-              <span className='text-green-600 font-bold text-sm'>
-                {card.options} Options
-              </span>
-              <span className='text-yellow-500 font-bold text-sm'>
-                {card.veganOptions} Options
-              </span>
-              <span className='bg-gray-200 text-xs px-2 py-0.5 rounded-full'>
-                Vegan
-              </span>
-            </div>
-            <div className='font-semibold text-gray-800 text-base leading-tight'>
-              {card.name}
-            </div>
-          </div>
-        ))}
-        <div className='flex flex-col items-center mx-4'>
-          <svg
-            width='160'
-            height='160'
-            viewBox='0 0 160 160'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <circle cx='80' cy='80' r='70' stroke='#E0E0E0' strokeWidth='12' />
-            <circle
-              cx='80'
-              cy='80'
-              r='70'
-              stroke='#00C853'
-              strokeWidth='12'
-              strokeDasharray='440'
-              strokeDashoffset='110'
-            />
-            <text
-              x='50%'
-              y='50%'
-              textAnchor='middle'
-              dy='.3em'
-              fontSize='28'
-              fontWeight='bold'
-              fill='#222'
+      <div className='w-full max-w-6xl mb-8 sm:mb-12 flex flex-col gap-6 sm:gap-8'>
+        {/* Cards and Circle: horizontal scroll on mobile, row on md+ */}
+        <div className='flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 w-full overflow-x-auto pb-2'>
+          {restaurantCards.slice(0, 2).map((card, i) => (
+            <div
+              key={i}
+              className='bg-white rounded-xl shadow-lg p-3 sm:p-4 w-64 min-w-[240px] flex-shrink-0'
             >
-              6.1 kg
-            </text>
-            <text x='50%' y='60%' textAnchor='middle' fontSize='16' fill='#888'>
-              SAVED
-            </text>
-          </svg>
-        </div>
-        {restaurantCards.slice(2).map((card, i) => (
-          <div
-            key={i + 2}
-            className='bg-white rounded-xl shadow-lg p-4 w-64 flex-shrink-0'
-          >
-            <div className='relative mb-3'>
-              <img
-                src={card.image}
-                alt={card.name}
-                className='rounded-lg w-full h-32 object-cover'
-              />
-              <div className='absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded-full font-bold'>
-                {card.rating} ★
+              <div className='relative mb-3'>
+                <img
+                  src={card.image}
+                  alt={card.name}
+                  className='rounded-lg w-full h-32 object-cover'
+                />
+                <div className='absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded-full font-bold'>
+                  {card.rating} ★
+                </div>
+                <div className='absolute top-2 right-2 bg-white text-green-600 text-xs px-2 py-1 rounded-full font-bold'>
+                  {card.distance}
+                </div>
+                <div className='absolute -top-4 right-1'>
+                  <span className='bg-green-500 text-white text-xs px-2 py-1 rounded-t-lg font-bold shadow'>
+                    VEGAN FOOD
+                  </span>
+                </div>
               </div>
-              <div className='absolute top-2 right-2 bg-white text-green-600 text-xs px-2 py-1 rounded-full font-bold'>
-                {card.distance}
-              </div>
-              <div className='absolute -top-4 right-1'>
-                <span className='bg-green-500 text-white text-xs px-2 py-1 rounded-t-lg font-bold shadow'>
-                  VEGAN FOOD
+              <div className='flex items-center gap-2 mb-1'>
+                <span className='text-green-600 font-bold text-sm'>
+                  {card.options} Options
+                </span>
+                <span className='text-yellow-500 font-bold text-sm'>
+                  {card.veganOptions} Options
+                </span>
+                <span className='bg-gray-200 text-xs px-2 py-0.5 rounded-full'>
+                  Vegan
                 </span>
               </div>
+              <div className='font-semibold text-gray-800 text-base leading-tight'>
+                {card.name}
+              </div>
             </div>
-            <div className='flex items-center gap-2 mb-1'>
-              <span className='text-green-600 font-bold text-sm'>
-                {card.options} Options
-              </span>
-              <span className='text-yellow-500 font-bold text-sm'>
-                {card.veganOptions} Options
-              </span>
-              <span className='bg-gray-200 text-xs px-2 py-0.5 rounded-full'>
-                Vegan
-              </span>
-            </div>
-            <div className='font-semibold text-gray-800 text-base leading-tight'>
-              {card.name}
-            </div>
+          ))}
+          <div className='flex flex-col items-center mx-0 sm:mx-4 my-4 sm:my-0'>
+            <svg
+              width='120'
+              height='120'
+              viewBox='0 0 160 160'
+              className='sm:w-[160px] sm:h-[160px] w-[120px] h-[120px]'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <circle
+                cx='80'
+                cy='80'
+                r='70'
+                stroke='#E0E0E0'
+                strokeWidth='12'
+              />
+              <circle
+                cx='80'
+                cy='80'
+                r='70'
+                stroke='#00C853'
+                strokeWidth='12'
+                strokeDasharray='440'
+                strokeDashoffset='110'
+              />
+              <text
+                x='50%'
+                y='50%'
+                textAnchor='middle'
+                dy='.3em'
+                fontSize='28'
+                fontWeight='bold'
+                fill='#222'
+              >
+                6.1 kg
+              </text>
+              <text
+                x='50%'
+                y='60%'
+                textAnchor='middle'
+                fontSize='16'
+                fill='#888'
+              >
+                SAVED
+              </text>
+            </svg>
           </div>
-        ))}
+          {restaurantCards.slice(2).map((card, i) => (
+            <div
+              key={i + 2}
+              className='bg-white rounded-xl shadow-lg p-3 sm:p-4 w-64 min-w-[240px] flex-shrink-0'
+            >
+              <div className='relative mb-3'>
+                <img
+                  src={card.image}
+                  alt={card.name}
+                  className='rounded-lg w-full h-32 object-cover'
+                />
+                <div className='absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded-full font-bold'>
+                  {card.rating} ★
+                </div>
+                <div className='absolute top-2 right-2 bg-white text-green-600 text-xs px-2 py-1 rounded-full font-bold'>
+                  {card.distance}
+                </div>
+                <div className='absolute -top-4 right-1'>
+                  <span className='bg-green-500 text-white text-xs px-2 py-1 rounded-t-lg font-bold shadow'>
+                    VEGAN FOOD
+                  </span>
+                </div>
+              </div>
+              <div className='flex items-center gap-2 mb-1'>
+                <span className='text-green-600 font-bold text-sm'>
+                  {card.options} Options
+                </span>
+                <span className='text-yellow-500 font-bold text-sm'>
+                  {card.veganOptions} Options
+                </span>
+                <span className='bg-gray-200 text-xs px-2 py-0.5 rounded-full'>
+                  Vegan
+                </span>
+              </div>
+              <div className='font-semibold text-gray-800 text-base leading-tight'>
+                {card.name}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
       <div className='flex flex-col items-center w-full'>
-        <div className='flex flex-row items-center justify-center gap-16 mb-4'>
-          <div className='flex flex-col items-center'>
+        {/* Stats: stack on mobile, row on md+ */}
+        <div className='flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-16 mb-4 w-full px-2'>
+          <div className='flex flex-col items-center mb-4 sm:mb-0'>
             <SmartphoneIcon />
-            <div className='font-bold text-xl mt-2'>
+            <div className='font-bold text-lg sm:text-xl mt-2'>
               754 <span className='font-normal text-base'>times</span>
             </div>
-            <div className='text-gray-500 text-sm'>Charging a Smartphone</div>
+            <div className='text-gray-500 text-xs sm:text-sm'>
+              Charging a Smartphone
+            </div>
           </div>
-          <div className='flex flex-col items-center'>
+          <div className='flex flex-col items-center mb-4 sm:mb-0'>
             <BulbIcon />
-            <div className='font-bold text-xl mt-2'>
+            <div className='font-bold text-lg sm:text-xl mt-2'>
               106 <span className='font-normal text-base'>h</span>
             </div>
-            <div className='text-gray-500 text-sm'>Using a LED Bulb</div>
+            <div className='text-gray-500 text-xs sm:text-sm'>
+              Using a LED Bulb
+            </div>
           </div>
           <div className='flex flex-col items-center'>
             <CarIcon />
-            <div className='font-bold text-xl mt-2'>
+            <div className='font-bold text-lg sm:text-xl mt-2'>
               40 <span className='font-normal text-base'>km</span>
             </div>
-            <div className='text-gray-500 text-sm'>Driving a Car</div>
+            <div className='text-gray-500 text-xs sm:text-sm'>
+              Driving a Car
+            </div>
           </div>
         </div>
         <div className='w-full flex flex-col items-center mt-2'>
           <svg
-            width='320'
-            height='24'
+            width='220'
+            height='18'
             viewBox='0 0 320 24'
+            className='sm:w-[320px] sm:h-[24px] w-[220px] h-[18px]'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
           >
@@ -254,9 +278,11 @@ const ImpactTrackingSection = () => {
               fill='none'
             />
           </svg>
-          <div className='text-green-600 font-bold text-lg mt-2'>CO₂</div>
-          <div className='font-bold text-2xl'>6.1 kg</div>
-          <div className='text-gray-500 text-sm'>
+          <div className='text-green-600 font-bold text-base sm:text-lg mt-2'>
+            CO₂
+          </div>
+          <div className='font-bold text-xl sm:text-2xl'>6.1 kg</div>
+          <div className='text-gray-500 text-xs sm:text-sm text-center'>
             CO₂ saved by eating
             <br />
             Vegan & Vegetarian

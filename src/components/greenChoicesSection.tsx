@@ -1,25 +1,25 @@
 const GreenChoicesSection = () => {
   return (
-    <section className='w-full bg-white flex justify-center py-20 px-4'>
-      <div className='max-w-7xl w-full flex flex-col md:flex-row items-center gap-12'>
+    <section className='w-full bg-white flex justify-center py-10 sm:py-20 px-2 sm:px-4'>
+      <div className='max-w-7xl w-full flex flex-col md:flex-row items-center gap-8 sm:gap-12'>
         {/* Left: Text and Options */}
-        <div className='flex-1 flex flex-col gap-6 min-w-[340px]'>
-          <span className='text-[#0AAD0B] font-semibold text-lg'>
+        <div className='flex-1 flex flex-col gap-4 sm:gap-6 min-w-0 w-full'>
+          <span className='text-[#0AAD0B] font-semibold text-base sm:text-lg'>
             Green Choices
           </span>
-          <h2 className='text-3xl md:text-4xl font-bold leading-tight mb-2  text-black'>
+          <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-2 text-black'>
             Discover Your Plant-
             <br />
             Based Choices
           </h2>
-          <p className='text-[#888] text-base max-w-md'>
+          <p className='text-[#888] text-sm sm:text-base max-w-md'>
             Look for <b>the leaf icon</b> on restaurant cards to easily spot
             100% plant-based dishes or options that can be customized to be
             plant-based to fit your dietary preferences.
           </p>
-          <div className='flex gap-6 mt-6'>
+          <div className='flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4 sm:mt-6 w-full'>
             {/* Plant-based options card */}
-            <div className='bg-white rounded-xl shadow-lg p-5 min-w-[160px] flex flex-col gap-2 border border-[#E6F6E6]'>
+            <div className='bg-white rounded-xl shadow-lg p-4 sm:p-5 w-full min-w-0 flex flex-col gap-2 border border-[#E6F6E6]'>
               <div className='flex items-center gap-2 mb-1'>
                 <span className='bg-[#0AAD0B] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold'>
                   🍃
@@ -74,7 +74,7 @@ const GreenChoicesSection = () => {
               </button>
             </div>
             {/* Non-vegan options card */}
-            <div className='bg-white rounded-xl shadow-lg p-5 min-w-[160px] flex flex-col gap-2 border border-[#FFEEDB] relative'>
+            <div className='bg-white rounded-xl shadow-lg p-4 sm:p-5 w-full min-w-0 flex flex-col gap-2 border border-[#FFEEDB] relative'>
               <div className='flex items-center gap-2 mb-1'>
                 <span className='bg-[#FF9900] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold'>
                   🍃
@@ -120,9 +120,9 @@ const GreenChoicesSection = () => {
           </div>
         </div>
         {/* Right: Phone and Restaurant Cards */}
-        <div className='flex-1 flex flex-col items-center gap-8 min-w-[340px]'>
+        <div className='flex-1 flex flex-col items-center gap-6 sm:gap-8 min-w-0 w-full mt-8 md:mt-0'>
           {/* Phone mockup */}
-          <div className='relative w-[320px] h-[420px] flex items-center justify-center'>
+          <div className='relative w-full max-w-[320px] h-[320px] sm:h-[420px] flex items-center justify-center'>
             <div className='absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-[#0AAD0B] whitespace-nowrap'>
               Vegan/Vegetarian restaurants near me
             </div>
@@ -132,10 +132,10 @@ const GreenChoicesSection = () => {
               <span className='text-[#bbb] text-lg'>[App UI Image]</span>
             </div>
           </div>
-          {/* Restaurant cards */}
-          <div className='flex gap-4 w-full justify-center flex-wrap'>
+          {/* Restaurant cards: horizontal scroll on mobile */}
+          <div className='flex gap-3 sm:gap-4 w-full justify-start sm:justify-center flex-nowrap sm:flex-wrap overflow-x-auto pb-2'>
             {/* Card 1 */}
-            <div className='bg-white rounded-xl shadow-md p-3 min-w-[180px] max-w-[200px] flex flex-col gap-2 border border-[#E6F6E6]'>
+            <div className='bg-white rounded-xl shadow-md p-3 min-w-[180px] max-w-[200px] flex flex-col gap-2 border border-[#E6F6E6] flex-shrink-0'>
               <div className='flex gap-2 items-center text-xs mb-1'>
                 <span className='bg-[#0AAD0B] text-white rounded-full w-5 h-5 flex items-center justify-center'>
                   🍃
@@ -155,7 +155,7 @@ const GreenChoicesSection = () => {
               </div>
             </div>
             {/* Card 2 */}
-            <div className='bg-white rounded-xl shadow-md p-3 min-w-[180px] max-w-[200px] flex flex-col gap-2 border border-[#E6F6E6]'>
+            <div className='bg-white rounded-xl shadow-md p-3 min-w-[180px] max-w-[200px] flex flex-col gap-2 border border-[#E6F6E6] flex-shrink-0'>
               <div className='flex gap-2 items-center text-xs mb-1'>
                 <span className='bg-[#0AAD0B] text-white rounded-full w-5 h-5 flex items-center justify-center'>
                   🍃
@@ -173,7 +173,7 @@ const GreenChoicesSection = () => {
               <div className='font-semibold text-sm mt-1'>Yard House</div>
             </div>
             {/* Card 3 */}
-            <div className='bg-white rounded-xl shadow-md p-3 min-w-[180px] max-w-[200px] flex flex-col gap-2 border border-[#E6F6E6]'>
+            <div className='bg-white rounded-xl shadow-md p-3 min-w-[180px] max-w-[200px] flex flex-col gap-2 border border-[#E6F6E6] flex-shrink-0'>
               <div className='flex gap-2 items-center text-xs mb-1'>
                 <span className='bg-[#0AAD0B] text-white rounded-full w-5 h-5 flex items-center justify-center'>
                   🍃
