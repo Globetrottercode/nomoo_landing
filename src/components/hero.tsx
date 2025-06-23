@@ -2,11 +2,13 @@ import Image from "next/image";
 import AppStore from "../../public/heroSection/appStore.svg";
 import Gplay from "../../public/heroSection/google_play.png";
 import CowFace from "../../public/heroSection/Frame.png";
+import ScrollDown from "../../public/heroSection/scrolldown.svg";
 // import GreenChoicesSection from './greenChoicesSection'
 
 const AppStoreImage = AppStore;
 const GplayImage = Gplay;
 const CowFaceImage = CowFace;
+const ScrollDownImage = ScrollDown;
 const HeroSection = () => {
   return (
     <>
@@ -26,7 +28,7 @@ const HeroSection = () => {
       {/* Hero Section */}
       <main className="flex flex-col items-center flex-1 w-full max-w-7xl mx-auto px-4">
         {/* Bookings/Delivery/Pickup */}
-        <div className="flex gap-4 text-[#0AAD0B] font-medium text-lg mt-4 mb-2">
+        <div className="flex gap-4 text-[#0AAD0B] font-medium text-lg mt-8 mb-8  md:mt-4 md:mb-2">
           <span>Bookings</span>
           <span className="text-[#222]">•</span>
           <span>Delivery</span>
@@ -35,11 +37,12 @@ const HeroSection = () => {
         </div>
         {/* Headline */}
         <h1 className="text-center text-4xl md:text-5xl font-bold leading-tight mb-2">
-          <span className="text-[#0AAD0B]">NoMoo</span>
+          <span className="text-[#0AAD0B] block md:inline">NoMoo</span>
           <span className="text-[#131313] font-stretch-50%">
             {" "}
-            – The Smartest
-            <br className="hidden md:block" /> Way to Go Plant-Based
+            <span className="hidden md:inline">- </span> The Smartest
+            <br className="hidden md:block" /> Way to Go{" "}
+            <span className="block md:inline"> Plant-Based</span>
           </span>
         </h1>
         {/* Subheadline */}
@@ -49,10 +52,10 @@ const HeroSection = () => {
           while making a real impact on the planet.
         </p>
         {/* App Store Buttons */}
-        <div className="flex gap-3 mb-6">
+        <div className="flex flex-col-reverse md:flex-row gap-3 mb-[25%] md:mb-6">
           <a
             href="#"
-            className="bg-[#0AAD0B] hover:bg-[#09990a] transition text-white font-semibold rounded-md px-7 py-2 flex items-center gap-3 shadow"
+            className="bg-[#0AAD0B] hover:bg-[#09990a] transition text-white font-semibold rounded-md px-7 py-2 flex justify-center  items-center gap-3 shadow"
           >
             <Image
               width={20}
@@ -61,16 +64,16 @@ const HeroSection = () => {
               src={AppStoreImage}
               className="w-7 h-7"
             />
-            <span className="flex flex-col leading-tight">
-              <span className="text-[10px] font-extralight">
+            <span className="flex md:flex-col flex leading-tight">
+              <span className="text-xs mr-1 md:mr-0 md:text-[10px] md:font-extralight">
                 Download on the
               </span>
-              <span className="text-sm">App Store</span>
+              <span className="text-xs md:text-sm">App Store</span>
             </span>
           </a>
           <a
             href="#"
-            className="bg-[#0AAD0B] hover:bg-[#09990a] transition text-white font-semibold rounded-md px-7 py-2 flex items-center gap-3 shadow"
+            className="bg-[#0AAD0B] hover:bg-[#09990a] transition text-white font-semibold rounded-md px-7 py-2 flex justify-center items-center gap-3 shadow"
           >
             <Image
               width={20}
@@ -79,9 +82,11 @@ const HeroSection = () => {
               src={GplayImage}
               className="w-7 h-7"
             />
-            <span className="flex flex-col leading-tight">
-              <span className="text-[10px] font-extralight">Get it on</span>
-              <span className="text-sm">Google Play</span>
+            <span className="flex md:flex-col leading-tight">
+              <span className="text-xs mr-1 md:mr-0 md:text-[10px] md:font-extralight">
+                Get it on
+              </span>
+              <span className="text-xs md:text-sm">Google Play</span>
             </span>
           </a>
         </div>
@@ -98,12 +103,16 @@ const HeroSection = () => {
         </div>
         {/* Scroll Down Indicator */}
         <div className="absolute right-8 bottom-8 flex flex-col items-center gap-2">
-          <span className="text-xs text-[#888] -rotate-90">Scroll Down</span>
-          <span className="w-8 h-8 border-2 border-[#0AAD0B] rounded-full flex items-center justify-center">
-            <svg width="16" height="16" fill="#0AAD0B" viewBox="0 0 24 24">
-              <path d="M12 16l-6-6h12z" />
-            </svg>
+          <span className="text-sm text-[#888] -rotate-90 mb-8">
+            Scroll Down
           </span>
+
+          <Image
+            width={40}
+            alt="App preview"
+            src={ScrollDownImage}
+            className=" mt-2 mb-4 z-10 h-full"
+          />
         </div>
       </main>
     </>

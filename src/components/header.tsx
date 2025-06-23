@@ -13,9 +13,9 @@ const Header = () => {
 
   return (
     <div className="bg-white w-full relative">
-      <header className="flex justify-between items-center w-full max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+      <header className="flex justify-between  items-center w-full max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <span className="cursor-pointer">
+        <span className="cursor-pointer  grow-[3.5] ">
           <Image
             width={120}
             height={40}
@@ -26,7 +26,7 @@ const Header = () => {
         </span>
 
         {/* Desktop Nav - DO NOT MODIFY */}
-        <nav className="hidden lg:flex gap-8 text-[15px] font-medium text-[#222]">
+        <nav className="hidden lg:flex justify-center gap-8 text-[15px] font-medium text-[#222] grow-1">
           <span className="text-[#0AAD0B] font-semibold relative after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-[#0AAD0B] after:rounded-full after:content-['']">
             Home
           </span>
@@ -40,7 +40,7 @@ const Header = () => {
         </nav>
 
         {/* CTA Buttons - DO NOT MODIFY */}
-        <div className="hidden lg:flex items-center gap-2">
+        <div className="hidden lg:flex items-center gap-2  grow-2 justify-end">
           <Image
             width={36}
             height={36}
