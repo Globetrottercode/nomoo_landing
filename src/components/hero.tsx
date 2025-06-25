@@ -102,16 +102,17 @@ const HeroSection = () => {
           />
         </div>
         {/* Scroll Down Indicator */}
-        <div className="absolute right-8 bottom-8 flex flex-col items-center gap-2">
-          <span className="text-sm text-[#888] -rotate-90 mb-8">
+        <div className="absolute hidden lg:flex right-2 bottom-2 lg:right-[5%] lg:top-[80%] flex flex-col items-center gap-2 z-20">
+          <span className="text-xs md:text-sm text-[#888] -rotate-90 mb-4 md:mb-8">
             Scroll Down
           </span>
 
           <Image
-            width={40}
-            alt="App preview"
+            width={32}
+            height={32}
+            alt="Scroll Down"
             src={ScrollDownImage}
-            className=" mt-2 mb-4 z-10 h-full"
+            className="w-8 md:w-10 lg:w-12 h-auto mt-1 md:mt-2 mb-2 md:mb-4 z-10"
           />
         </div>
       </main>
