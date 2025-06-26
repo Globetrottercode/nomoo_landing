@@ -19,10 +19,10 @@ const ArrowIcon = () => (
 
 const KeyFeaturesSection = () => {
   return (
-    <div className='w-full flex flex-col items-center p-[8%] md:p-0'>
+    <div className='w-full bg-white dark:bg-white flex flex-col items-center p-[8%] md:p-0'>
       <div className='flex flex-col justify-center items-center mb-12 md:px-[20%]'>
         <p className='text-[#0AAD0B] text-xl'>Key Features</p>
-        <p className='text-bold font-bold text-center text-[25px] md:text-[35px]'>Delivery That&apos;s Better for You and the Planet</p>
+        <p className='text-bold font-bold text-black text-center text-[25px] md:text-[35px]'>Delivery That&apos;s Better for You and the Planet</p>
         <p className='text-[#898989] text-sm md:text-base text-center'>Craving comfort food without the carbon guilt? NoMoo connects you with plant-based delivery options near you, complete with our sustainability scores.</p>
       </div>
       <div className='w-full flex flex-col md:flex-row md:px-[5%]  items-center '>

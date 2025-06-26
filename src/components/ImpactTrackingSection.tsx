@@ -5,7 +5,7 @@ const ImpactTrackingSection = () => {
   return (
     <>
     {/* Large Screen */}
-    <div className="hidden  lg:flex justify-center items-center md:p-2 lg:p-[5%]">
+    <div className="hidden lg:flex justify-center items-center md:p-2 lg:p-[5%] bg-white dark:bg-white">
       <img
         src="/section3/lgScreen.svg"
         alt="Section 3 Large Screen"
@@ -13,7 +13,7 @@ const ImpactTrackingSection = () => {
       />
     </div>
     {/* Medium Screen */}
-    <div className="w-full flex-col hidden  md:flex lg:hidden justify-center p-4 items-center">
+    <div className="w-full flex-col hidden md:flex lg:hidden justify-center p-4 items-center bg-white dark:bg-white">
     <img
       src="/section3/lgScreen.svg"
       alt="Section 3 Medium Screen"
@@ -21,7 +21,7 @@ const ImpactTrackingSection = () => {
     />   
   </div>
   {/* Phone View */}
-  <div className="w-full  p-2 md:hidden">
+  <div className="w-full p-2 md:hidden bg-white dark:bg-white">
   </div>
     <img
       src="/section3/mobileScreen.svg"
