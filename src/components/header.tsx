@@ -4,132 +4,89 @@ import HeaderLogo from "../../public/headerLogo.svg";
 import HeaderGplay from "../../public/headerGplay.svg";
 import HeaderAppStore from "../../public/headerAppStore.svg";
 
-const HeaderLogoImage = HeaderLogo;
-const HeaderGplayImage = HeaderGplay;
-const HeaderAppStoreImage = HeaderAppStore;
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className="bg-white w-full relative">
-      <header className="flex justify-between  items-center w-full max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+      {/* Header Bar */}
+      <header className="flex justify-between items-center w-full max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <span className="cursor-pointer  grow-[3.5] ">
+        <span className="cursor-pointer grow-[3.5]">
           <Image
             width={120}
             height={40}
             alt="NoMoo logo"
-            src={HeaderLogoImage}
-            className="cursor-pointer border-2"
+            src={HeaderLogo}
+            className="cursor-pointer"
           />
         </span>
 
-        {/* Desktop Nav - DO NOT MODIFY */}
+        {/* Desktop Nav */}
         <nav className="hidden lg:flex justify-center gap-8 text-[15px] font-medium text-[#222] grow-1">
           <span className="text-[#0AAD0B] font-semibold relative after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-[#0AAD0B] after:rounded-full after:content-['']">
             Home
           </span>
-          <span className="hover:text-[#0AAD0B] cursor-pointer">
-            How it works?
-          </span>
-          <span className="hover:text-[#0AAD0B] cursor-pointer">
-            Key Features
-          </span>
+          <span className="hover:text-[#0AAD0B] cursor-pointer">How it works?</span>
+          <span className="hover:text-[#0AAD0B] cursor-pointer">Key Features</span>
           <span className="hover:text-[#0AAD0B] cursor-pointer">FAQs</span>
         </nav>
 
-        {/* CTA Buttons - DO NOT MODIFY */}
-        <div className="hidden lg:flex items-center gap-2  grow-2 justify-end">
-          <Image
-            width={36}
-            height={36}
-            alt="Google Play"
-            src={HeaderGplayImage}
-            className="cursor-pointer"
-          />
-          <Image
-            width={36}
-            height={36}
-            alt="App Store"
-            src={HeaderAppStoreImage}
-            className="cursor-pointer"
-          />
+        {/* Desktop CTA */}
+        <div className="hidden lg:flex items-center gap-2 grow-2 justify-end">
+          <Image width={36} height={36} alt="Google Play" src={HeaderGplay} className="cursor-pointer" />
+          <Image width={36} height={36} alt="App Store" src={HeaderAppStore} className="cursor-pointer" />
           <button className="ml-2 px-4 py-2 rounded-md bg-[#0AAD0B] text-white font-bold text-[15px] shadow hover:bg-[#09990a] transition">
             Join the waitlist
           </button>
         </div>
 
-        {/* Hamburger - visible from tablet and below */}
-        <button
-          className="lg:hidden flex flex-col justify-center items-center w-10 h-10 bg-[#0AAD0B] rounded-md p-2 z-50"
-          onClick={() => {
-            setIsMenuOpen(!isMenuOpen);
-          }}
-          aria-label="Toggle navigation menu"
-        >
-          <span
-            className={`block w-5 h-0.5 bg-white transition-transform duration-300 ${
-              isMenuOpen ? "rotate-45 translate-y-1.5" : ""
-            }`}
-          />
-          <span
-            className={`block w-5 h-0.5 bg-white mt-1 transition-opacity duration-300 ${
-              isMenuOpen ? "opacity-0" : ""
-            }`}
-          />
-          <span
-            className={`block w-5 h-0.5 bg-white mt-1 transition-transform duration-300 ${
-              isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
-            }`}
-          />
-        </button>
+        {/* Hamburger Icon - Show only when menu is closed */}
+        {!isMenuOpen && (
+          <button
+            className="lg:hidden flex flex-col justify-center items-center w-10 h-10 bg-[#0AAD0B] rounded-md p-2 z-50"
+            onClick={() => setIsMenuOpen(true)}
+            aria-label="Open menu"
+          >
+            <span className="block w-5 h-0.5 bg-white" />
+            <span className="block w-5 h-0.5 bg-white mt-1" />
+            <span className="block w-5 h-0.5 bg-white mt-1" />
+          </button>
+        )}
       </header>
 
-      {/* Mobile Navigation */}
-      <div
-        className={`lg:hidden absolute top-full left-0 w-full bg-white overflow-hidden border-t border-gray-200 transition-all duration-300 ease-in-out ${
-          isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <nav className="flex flex-col py-4 px-6 space-y-4 text-[#222] font-medium">
-          <span className="text-[#0AAD0B] font-semibold border-b border-gray-100 pb-2">
-            Home
-          </span>
-          <span className="hover:text-[#0AAD0B] cursor-pointer border-b border-gray-100 pb-2">
-            How it works?
-          </span>
-          <span className="hover:text-[#0AAD0B] cursor-pointer border-b border-gray-100 pb-2">
-            Key Features
-          </span>
-          <span className="hover:text-[#0AAD0B] cursor-pointer border-b border-gray-100 pb-2">
-            FAQs
-          </span>
+      {/* Full-Screen Mobile Menu */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 bg-white z-40 flex flex-col px-6 py-6">
+          {/* Close Icon */}
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="absolute top-4 right-4 text-black text-3xl font-light z-50"
+            aria-label="Close menu"
+          >
+            &times;
+          </button>
 
-          {/* Store Buttons */}
-          <div className="flex gap-3 pt-2">
-            <Image
-              width={36}
-              height={36}
-              alt="Google Play"
-              src={HeaderGplayImage}
-              className="cursor-pointer"
-            />
-            <Image
-              width={36}
-              height={36}
-              alt="App Store"
-              src={HeaderAppStoreImage}
-              className="cursor-pointer"
-            />
+          {/* Mobile Navigation Content */}
+          <nav className="mt-14 flex flex-col gap-4 text-[#222] font-medium text-[16px]">
+            <span className="text-[#0AAD0B] font-semibold">Home</span>
+            <span className="hover:text-[#0AAD0B] cursor-pointer">How it works?</span>
+            <span className="hover:text-[#0AAD0B] cursor-pointer">Key Features</span>
+            <span className="hover:text-[#0AAD0B] cursor-pointer">FAQs</span>
+          </nav>
+
+          {/* App Store Buttons */}
+          <div className="flex gap-3 mt-6">
+            <Image width={40} height={40} alt="Google Play" src={HeaderGplay} className="cursor-pointer" />
+            <Image width={40} height={40} alt="App Store" src={HeaderAppStore} className="cursor-pointer" />
           </div>
 
-          {/* CTA Button */}
-          <button className="w-full px-4 py-3 rounded-md bg-[#0AAD0B] text-white font-bold text-[15px] shadow hover:bg-[#09990a] transition mt-4">
+          {/* CTA */}
+          <button className="mt-6 w-full px-4 py-3 rounded-md bg-[#0AAD0B] text-white font-bold text-[16px] shadow hover:bg-[#09990a] transition">
             Join the waitlist
           </button>
-        </nav>
-      </div>
+        </div>
+      )}
     </div>
   );
 };
